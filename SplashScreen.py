@@ -13,7 +13,7 @@ class SplashScreen(QMainWindow):
         self.label = QLabel(self)
         self.label.setGeometry(0, 0, self.width(), self.height())
         self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.logo_pixmap = QtGui.QPixmap("mirai2.png")
+        self.logo_pixmap = QtGui.QPixmap("mirai.png")
         self.label.setPixmap(self.logo_pixmap)
         self.animation = QPropertyAnimation(self.label, b"geometry")
         self.animation.setDuration(3000)
