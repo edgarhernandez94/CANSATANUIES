@@ -363,7 +363,7 @@ class Ui_MainWindow(object):
                 # QMessageBox.warning(self.main_window, "Error de datos", "Los datos recibidos no son válidos.")
                 return  # Salir de la función sin hacer nada más
 
-            print(data_list)
+            #print(data_list)
             self.textEdit_10.setText(data_list[0])
             self.textEdit_6.setText(data_list[1])
             self.textEdit_4.setText(data_list[2])
