@@ -211,9 +211,9 @@ class Ui_MainWindow(object):
         self.textEdit_14.setEnabled(True)
         self.textEdit_14.setObjectName("textEdit_14")
         self.verticalLayout_4.addWidget(self.textEdit_14)
-        self.textEdit_15 = QtWidgets.QTextEdit(self.horizontalWidget_2)
-        self.textEdit_15.setObjectName("textEdit_15")
-        self.verticalLayout_4.addWidget(self.textEdit_15)
+        #self.textEdit_15 = QtWidgets.QTextEdit(self.horizontalWidget_2)
+        #self.textEdit_15.setObjectName("textEdit_15")
+        #self.verticalLayout_4.addWidget(self.textEdit_15)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
         self.label_15 = QtWidgets.QLabel(self.centralwidget)
         self.label_15.setGeometry(QtCore.QRect(0, 0, 822, 581))
@@ -254,7 +254,7 @@ class Ui_MainWindow(object):
         for i in range(1, 15):  # Esto iterará desde 1 hasta 14 incluido.
             label = getattr(self, f"label_{i}" if i != 1 else "label")
             label.setFont(font)
-        for i in range(1, 16):  # Esto iterará desde 1 hasta 14 incluido.
+        for i in range(1, 15):  # Esto iterará desde 1 hasta 14 incluido.
             textEdit = getattr(self, f"textEdit_{i}" if i != 1 else "textEdit")
             textEdit.setFont(font)
             textEdit.setReadOnly(True)  # Configurar como solo lectura
@@ -280,6 +280,8 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "Altitude:"))
         self.label_14.setText(_translate("MainWindow", "Lat:"))
         self.label_10.setText(_translate("MainWindow", "Lon:"))
+    
+        
     def adjustSize(self,MainWindow):
         window_width = MainWindow.frameGeometry().width()
         window_height = MainWindow.frameGeometry().height()
@@ -358,7 +360,7 @@ class Ui_MainWindow(object):
             data_list = data.split(",")
 
             # Verificar si data_list tiene exactamente 16 elementos
-            if len(data_list) != 16:
+            if len(data_list) != 15:
                 # Puedes mostrar un mensaje de error aquí si lo deseas
                 # QMessageBox.warning(self.main_window, "Error de datos", "Los datos recibidos no son válidos.")
                 return  # Salir de la función sin hacer nada más
@@ -378,8 +380,7 @@ class Ui_MainWindow(object):
             self.textEdit_13.setText(data_list[11])
             self.textEdit_9.setText(data_list[12])
             self.textEdit_14.setText(data_list[13])
-            self.textEdit_15.setText(data_list[14])
-            battery_value = int(data_list[15])
+            battery_value = int(data_list[14])
             battery_icon = self.set_battery_icon(battery_value)
             self.label_battery.setPixmap(battery_icon.pixmap(40, 40))
             if self.gyro_window or self.accel_window:

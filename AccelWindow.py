@@ -93,8 +93,7 @@ class AccelWindow(QMainWindow):
             del self.data_z[0]
 
         # Establece el límite de y a 100.
-        self.ax.set_ylim(0, 100)
-
+        self.ax.set_ylim(min(self.data_x + self.data_y + self.data_z), max(self.data_x + self.data_y + self.data_z))
         # Ahora, simplemente dibuja las listas completas.
         self.line_x.set_data(range(len(self.data_x)), self.data_x)
         self.line_y.set_data(range(len(self.data_y)), self.data_y)
