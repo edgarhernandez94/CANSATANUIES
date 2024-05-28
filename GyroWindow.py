@@ -85,7 +85,7 @@ class GyroWindow(QMainWindow):
         self.data_x.extend([float(data[3])])
         self.data_y.extend([float(data[4])])
         self.data_z.extend([float(data[5])])
-        print(self.data_x)
+        #print(self.data_x)
         # Si hemos recibido más de 10 muestras, eliminamos las primeras.
         if len(self.data_x) > 20:
             del self.data_x[0]
